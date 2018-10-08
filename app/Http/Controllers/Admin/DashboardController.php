@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\User;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,6 +15,8 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        dd(111);
+        $users = User::getAllUsers()->paginate(5);
+
+        return view('admin.dashboard', ['users' => $users, 'roles' => User::getRoles()]);
     }
 }

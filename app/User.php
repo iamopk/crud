@@ -50,4 +50,38 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->role === self::ADMIN_USER_ROLE;
     }
+
+    public static function getRoles()
+    {
+        return [
+            self::DEFAULT_USER_ROLE => 'User',
+            self::ADMIN_USER_ROLE => 'Admin',
+        ];
+    }
+
+    /**
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public static function getAllUsers()
+    {
+        return \DB::table('users')
+            ->select([
+                'users.id as id',
+                'users.name as first_name',
+                'second_name',
+                'email',
+                'gender',
+                'suffix',
+                'address',
+                'role',
+                'phoneNumber',
+                'cities.name as city',
+                'companies.name as company',
+                'jobs.name as job',
+            ])
+            ->leftJoin('cities', 'users.city_id', '=', 'cities.id')
+            ->leftJoin('companies', 'users.city_id', '=', 'companies.id')
+            ->leftJoin('jobs', 'users.city_id', '=', 'jobs.id')
+            ->orderBy('users.id', 'DESC');
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -23,6 +24,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users = User::getAllUsers()->take(10)->get();
+
+        return view('home', ['users' => $users, 'roles' => User::getRoles()]);
     }
 }
