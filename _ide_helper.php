@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.8 on 2018-10-08 10:26:18.
+ * Generated for Laravel 5.7.8 on 2018-10-08 12:26:58.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -14127,6 +14127,103 @@ namespace Barryvdh\Debugbar {
  
 }
 
+namespace Kamaln7\Toastr\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class Toastr {
+        
+        /**
+         * Render the notifications' script tag
+         *
+         * @return string 
+         * @internal param bool $flashed Whether to get the
+         * @static 
+         */ 
+        public static function render()
+        {
+            return \Kamaln7\Toastr\Toastr::render();
+        }
+        
+        /**
+         * Add a notification
+         *
+         * @param string $type Could be error, info, success, or warning.
+         * @param string $message The notification's message
+         * @param string $title The notification's title
+         * @return bool Returns whether the notification was successfully added or
+         * not.
+         * @static 
+         */ 
+        public static function add($type, $message, $title = null, $options = array())
+        {
+            return \Kamaln7\Toastr\Toastr::add($type, $message, $title, $options);
+        }
+        
+        /**
+         * Shortcut for adding an info notification
+         *
+         * @param string $message The notification's message
+         * @param string $title The notification's title
+         * @static 
+         */ 
+        public static function info($message, $title = null, $options = array())
+        {
+            return \Kamaln7\Toastr\Toastr::info($message, $title, $options);
+        }
+        
+        /**
+         * Shortcut for adding an error notification
+         *
+         * @param string $message The notification's message
+         * @param string $title The notification's title
+         * @static 
+         */ 
+        public static function error($message, $title = null, $options = array())
+        {
+            return \Kamaln7\Toastr\Toastr::error($message, $title, $options);
+        }
+        
+        /**
+         * Shortcut for adding a warning notification
+         *
+         * @param string $message The notification's message
+         * @param string $title The notification's title
+         * @static 
+         */ 
+        public static function warning($message, $title = null, $options = array())
+        {
+            return \Kamaln7\Toastr\Toastr::warning($message, $title, $options);
+        }
+        
+        /**
+         * Shortcut for adding a success notification
+         *
+         * @param string $message The notification's message
+         * @param string $title The notification's title
+         * @static 
+         */ 
+        public static function success($message, $title = null, $options = array())
+        {
+            return \Kamaln7\Toastr\Toastr::success($message, $title, $options);
+        }
+        
+        /**
+         * Clear all notifications
+         *
+         * @static 
+         */ 
+        public static function clear()
+        {
+            return \Kamaln7\Toastr\Toastr::clear();
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -16501,6 +16598,8 @@ namespace  {
     class View extends \Illuminate\Support\Facades\View {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
+    class Toastr extends \Kamaln7\Toastr\Facades\Toastr {}
  
 }
 

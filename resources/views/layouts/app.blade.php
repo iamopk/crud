@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js', 'build') }}" defer></script>
+    <script src="{{ mix('js/app.js', 'build') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -82,5 +82,6 @@
             @yield('content')
         </main>
     </div>
+    @include('layouts._flashes')
 </body>
 </html>

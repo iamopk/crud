@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-10-08 10:26:19.
+    * Generated on 2018-10-08 12:26:59.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -142,6 +142,7 @@ namespace PHPSTORM_META {
         'session.store' => \Illuminate\Session\Store::class,
         'swift.mailer' => \Swift_Mailer::class,
         'swift.transport' => \Illuminate\Mail\TransportManager::class,
+        'toastr' => \Kamaln7\Toastr\Toastr::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'url' => \Illuminate\Routing\UrlGenerator::class,
@@ -282,6 +283,7 @@ namespace PHPSTORM_META {
         'session.store' => \Illuminate\Session\Store::class,
         'swift.mailer' => \Swift_Mailer::class,
         'swift.transport' => \Illuminate\Mail\TransportManager::class,
+        'toastr' => \Kamaln7\Toastr\Toastr::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'url' => \Illuminate\Routing\UrlGenerator::class,
@@ -422,6 +424,7 @@ namespace PHPSTORM_META {
         'session.store' => \Illuminate\Session\Store::class,
         'swift.mailer' => \Swift_Mailer::class,
         'swift.transport' => \Illuminate\Mail\TransportManager::class,
+        'toastr' => \Kamaln7\Toastr\Toastr::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'url' => \Illuminate\Routing\UrlGenerator::class,
@@ -562,6 +565,7 @@ namespace PHPSTORM_META {
         'session.store' => \Illuminate\Session\Store::class,
         'swift.mailer' => \Swift_Mailer::class,
         'swift.transport' => \Illuminate\Mail\TransportManager::class,
+        'toastr' => \Kamaln7\Toastr\Toastr::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'url' => \Illuminate\Routing\UrlGenerator::class,
@@ -702,6 +706,7 @@ namespace PHPSTORM_META {
         'session.store' => \Illuminate\Session\Store::class,
         'swift.mailer' => \Swift_Mailer::class,
         'swift.transport' => \Illuminate\Mail\TransportManager::class,
+        'toastr' => \Kamaln7\Toastr\Toastr::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'url' => \Illuminate\Routing\UrlGenerator::class,
@@ -842,6 +847,7 @@ namespace PHPSTORM_META {
         'session.store' => \Illuminate\Session\Store::class,
         'swift.mailer' => \Swift_Mailer::class,
         'swift.transport' => \Illuminate\Mail\TransportManager::class,
+        'toastr' => \Kamaln7\Toastr\Toastr::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'url' => \Illuminate\Routing\UrlGenerator::class,
@@ -982,6 +988,7 @@ namespace PHPSTORM_META {
         'session.store' => \Illuminate\Session\Store::class,
         'swift.mailer' => \Swift_Mailer::class,
         'swift.transport' => \Illuminate\Mail\TransportManager::class,
+        'toastr' => \Kamaln7\Toastr\Toastr::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'url' => \Illuminate\Routing\UrlGenerator::class,

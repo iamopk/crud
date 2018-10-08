@@ -95,5 +95,6 @@
                 </div>
             </div>
         </div>
+        @include('layouts._flashes')
     </body>
 </html>
