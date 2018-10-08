@@ -10,6 +10,9 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
+    const DEFAULT_USER_ROLE = 0;
+    const ADMIN_USER_ROLE = 1;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,5 +44,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function job()
     {
         return $this->belongsTo(Job::class, 'job_id', 'id');
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === self::ADMIN_USER_ROLE;
     }
 }

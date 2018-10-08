@@ -13,8 +13,17 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('front');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'ProfileController@index')->name('profile');
+
+Route::group([
+    'prefix' => 'admin',
+    'as' => 'admin.',
+    'namespace' => 'Admin',
+    'middleware' => ['auth'],
+], function () {
+    Route::get('/', 'DashboardController@index')->name('index');
+});
