@@ -80,7 +80,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.users.edit', [
+            'user' => User::query()->find($id),
+            'roles' => User::getRoles(),
+            'cities' => City::all(),
+            'companies' => Company::all(),
+            'jobs' => Job::all(),
+        ]);
     }
 
     /**
@@ -92,7 +98,29 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'string|nullable',
+            'email' => 'required',
+        ]);
+
+        User::query()->where('id', $id)->update([
+            'name' => $request->input('first_name'),
+            'email' => $request->input('email'),
+            'second_name' => $request->input('last_name'),
+            'gender' => $request->input('gender'),
+            'suffix' => $request->input('suffix'),
+            'address' => $request->input('address'),
+            'role' => $request->input('role'),
+            'phoneNumber' => $request->input('phone'),
+            'city_id' => $request->input('city'),
+            'company_id' => $request->input('company'),
+            'job_id' => $request->input('jobs'),
+        ]);
+
+        Toastr::success('New user is updated');
+
+        return redirect(route('admin.index'));
     }
 
     /**
@@ -103,6 +131,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::query()->find($id)->delete();
+
+        Toastr::success('User is deleted');
+
+        return redirect(route('admin.index'));
     }
 }

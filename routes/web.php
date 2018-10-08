@@ -28,4 +28,7 @@ Route::group([
     Route::get('/', 'DashboardController@index')->name('index');
     Route::get('/users/create', 'UserController@create')->name('user.create');
     Route::post('/users', 'UserController@store')->name('user.store');
+    Route::get('/users/delete/{id}', 'UserController@destroy')->name('user.delete');
+    Route::get('/users/edit/{id}', 'UserController@edit')->name('user.edit');
+    Route::post('/users/edit/{id}', 'UserController@update')->name('user.update');
 });

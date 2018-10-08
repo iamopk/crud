@@ -13,6 +13,9 @@
         <th scope="col">City</th>
         <th scope="col">Company</th>
         <th scope="col">Job</th>
+        @can('access-admin-panel')
+            <th scope="col"></th>
+        @endcan
     </tr>
     </thead>
     <tbody>
@@ -30,6 +33,12 @@
             <td>{{ $user->city }}</td>
             <td>{{ $user->company }}</td>
             <td>{{ $user->job }}</td>
+            @can('access-admin-panel')
+                <td class="d-flex">
+                    <a href="{{route('admin.user.edit', ['id' => $user->id] )}}" class="btn btn-primary btn-xs mr-1">Edit</a>
+                    <a href="{{route('admin.user.delete', ['id' => $user->id])}}" class="btn btn-danger btn-xs">Delete</a>
+                </td>
+            @endcan
         </tr>
     @empty
         <tr>

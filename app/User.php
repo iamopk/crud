@@ -91,8 +91,8 @@ class User extends Authenticatable implements MustVerifyEmail
                 'jobs.name as job',
             ])
             ->leftJoin('cities', 'users.city_id', '=', 'cities.id')
-            ->leftJoin('companies', 'users.city_id', '=', 'companies.id')
-            ->leftJoin('jobs', 'users.city_id', '=', 'jobs.id')
+            ->leftJoin('companies', 'users.company_id', '=', 'companies.id')
+            ->leftJoin('jobs', 'users.job_id', '=', 'jobs.id')
             ->orderBy('users.id', 'DESC');
     }
 }
